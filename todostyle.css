@@ -1,0 +1,55 @@
+body, html{
+    margin:0; padding:0;
+}
+
+.todo input[type="checkbox"]{display: none}
+
+
+.todo{
+    width: 400px;
+    height : auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+.todo .lists{
+    min-height: 300px;
+}
+
+.todo .list{display: flex; padding-top:10px;}
+
+
+/* checkbox */
+.todo .tick, .todo .delete{
+    display: flex;
+    align-items: center;
+}
+.todo .tick label{
+    display: block;
+    border: 4px solid rgb(121, 121, 121);
+    border-radius: 5px;
+    width:15px; height:15px;
+    position: relative;
+}
+.todo .tick label::after{
+    content:'';
+    position: absolute;
+    display: block;
+    width: 18px; height: 5px;
+    border-left: 4px solid rgb(121, 121, 121);
+    border-bottom: 4px solid rgb(121, 121, 121);
+    transform: rotate(-45deg);
+    top: -2px; left: 3px;;
+}
+
+
+
+
+
+
+
+
+.todo .content { 
+    flex: 1; 
+    padding: 5px 15px;
+    text-align: justify;
+}
