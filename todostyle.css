@@ -1,55 +1,89 @@
 body, html{
     margin:0; padding:0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #707070;
 }
+body {
+    background: rgba(183,109,193,1);
+    background: -moz-linear-gradient(-45deg, rgba(183,109,193,1) 0%, rgba(69,35,124,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(183,109,193,1)), color-stop(100%, rgba(69,35,124,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(183,109,193,1) 0%, rgba(69,35,124,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(183,109,193,1) 0%, rgba(69,35,124,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(183,109,193,1) 0%, rgba(69,35,124,1) 100%);
+    background: linear-gradient(135deg, rgba(183,109,193,1) 0%, rgba(69,35,124,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b76dc1', endColorstr='#45237c', GradientType=1 );
 
-.todo input[type="checkbox"]{display: none}
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .todo{
+    background: white;
+    height: 600px;
     width: 400px;
-    height : auto;
-    border: 1px solid black;
-    padding: 10px;
-}
-.todo .lists{
-    min-height: 300px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
 }
 
-.todo .list{display: flex; padding-top:10px;}
+.todo .title{
+    padding: 15px 30px;
+}
+
+.todo .content{
+    flex:1;
+    overflow:auto;
+}
+
+.todo .enter{
+    max-height: 70px;
+    padding: 10px 30px;
+    font-size: large;
+    border:none;
+    outline: none;
+    border-top: 1px solid #c5c5c5;
+}
+
+.todo .list {
+    display: flex;
+    padding: 20px 30px;
+    border-bottom: 1px solid #d8d7d7;
+}
+.todo .list > div:nth-child(2){flex: 1; padding: 0 20px; text-align: justify;}
+.todo img{
+    height: 19px; 
+}
+
 
 
 /* checkbox */
-.todo .tick, .todo .delete{
-    display: flex;
-    align-items: center;
-}
-.todo .tick label{
+.todo input{display: none;}
+.todo label{
     display: block;
-    border: 4px solid rgb(121, 121, 121);
+    width:15px; height: 15px;
     border-radius: 5px;
-    width:15px; height:15px;
+    border: 2px solid #707070;
+    cursor: pointer;
     position: relative;
 }
-.todo .tick label::after{
-    content:'';
+.todo label:after{
+    content: '';
     position: absolute;
-    display: block;
-    width: 18px; height: 5px;
-    border-left: 4px solid rgb(121, 121, 121);
-    border-bottom: 4px solid rgb(121, 121, 121);
+    width: 17px;
+    height: 7px;
+    border: 2px solid #1B8D3A;
+    border-top: none;
+    border-right: none;
     transform: rotate(-45deg);
-    top: -2px; left: 3px;;
+    top: -3px;
+    left: 3px;
+    display: none;
 }
 
-
-
-
-
-
-
-
-.todo .content { 
-    flex: 1; 
-    padding: 5px 15px;
-    text-align: justify;
-}
+.todo .list.checked label{border-color: #1B8D3A}
+.todo .list.checked > div:nth-child(2){color: #1B8D3A;}
+.todo .list.checked label::after{display: block;}
