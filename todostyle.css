@@ -52,12 +52,36 @@ body {
     display: flex;
     padding: 20px 30px;
     border-bottom: 1px solid #d8d7d7;
+    cursor: pointer;
 }
 .todo .list > div:nth-child(2){flex: 1; padding: 0 20px; text-align: justify;}
+
 .todo img{
-    height: 19px; 
+    height: 19px;   
 }
 
+/* on hover show delete button */
+.todo .list > div:nth-child(3){opacity: 0;}
+.todo .list:hover > div:nth-child(3){opacity: 1;}
+
+/* on hover scale list */
+.todo .list:hover{
+    box-shadow: 0px 0px 6px #747474;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+    border:none;
+}
+
+
+/* Do not show border od the last list */
+.todo .list:last-child{border:none;}
 
 
 /* checkbox */
