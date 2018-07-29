@@ -85,7 +85,6 @@ body {
 
 
 /* checkbox */
-.todo input{display: none;}
 .todo label{
     display: block;
     width:15px; height: 15px;
